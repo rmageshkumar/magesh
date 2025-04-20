@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Preconnect and dns-prefetch resource hints -->
+    <link rel="preconnect" href="https://www.google.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- Inline critical Google Fonts CSS to avoid render blocking -->
+    <style>
+      /* Inline font-face declarations */
+      @font-face {
+        font-family: "Space Grotesk";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUXskPMBBSSJLm2E.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUXskPMBBSSJLm2E.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42VnskPMBBSSJLm2E.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVnskPMBBSSJLm2E.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+
+    <!-- Preload critical font files -->
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUXskPMBBSSJLm2E.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Favicon and app icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/favicon-16x16.png"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta
+      name="description"
+      content="Mageshkumar Rajendiran - Senior AEM Frontend Developer and UI Lead"
+    />
+    <title>Mageshkumar Rajendiran | Portfolio</title>
+
+    <!-- Load reCAPTCHA API script only when needed -->
+    <script>
+      // Function to dynamically load reCAPTCHA script
+      function loadRecaptchaScript() {
+        if (!window.grecaptcha) {
+          const script = document.createElement("script");
+          // Add SameSite=None and Secure parameters to the URL
+          script.src =
+            "https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoaded";
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+          
+          // Define the callback function that reCAPTCHA will call when loaded
+          window.onRecaptchaLoaded = function() {
+            // Signal that reCAPTCHA is ready
+            document.dispatchEvent(new Event('recaptchaLoaded'));
+          };
+        }
+      }
+
+      // Load reCAPTCHA when user scrolls to contact section or after page load
+      window.addEventListener("load", function () {
+        // Option 1: Lazy load after page is fully loaded and idle
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(
+            function () {
+              loadRecaptchaScript();
+            },
+            { timeout: 5000 }
+          );
+        } else {
+          // Fallback for browsers that don't support requestIdleCallback
+          setTimeout(loadRecaptchaScript, 3000);
+        }
+
+        // Option 2: Load when user scrolls near contact section
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                loadRecaptchaScript();
+                observer.disconnect();
+              }
+            });
+          },
+          { rootMargin: "200px 0px" }
+        );
+
+        // Start observing when DOM is fully loaded
+        setTimeout(() => {
+          const contactSection = document.getElementById("contact");
+          if (contactSection) {
+            observer.observe(contactSection);
+          }
+        }, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
